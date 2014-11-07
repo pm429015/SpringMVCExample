@@ -4,5 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	<bean id="duke" class="com.journaldev.spring.coommon.Juggler">
+		<constructor-arg value="100" />
+	</bean>	
+	
+	<bean id="sonnet29" class="com.journaldev.spring.coommon.Sonnet29">
+	</bean>
+	
+	<bean id="poeticDuck" class="com.journaldev.spring.coommon.PoeticJuggler">
+		<property name="bags" value="3300" />
+		<property name="poem" ref="sonnet29"/>
+	</bean>	
+	
+	<bean id="poeticDuck2" class="com.journaldev.spring.coommon.PoeticJuggler">
+		<property name="bags" value="30" />
+		<property name="poem" ref="sonnet29"/>
+	</bean>
+	
+	<bean id="stage" class="com.journaldev.spring.coommon.Stage" factory-method="instance">
+	</bean>
 </beans>
