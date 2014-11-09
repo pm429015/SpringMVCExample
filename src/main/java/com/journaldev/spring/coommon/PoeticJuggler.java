@@ -2,6 +2,8 @@ package com.journaldev.spring.coommon;
 
 public class PoeticJuggler extends Juggler {
 	private Poem poem;
+	private int jump;
+	
 	
 	public Poem getPoem() {
 		return poem;
@@ -27,7 +29,15 @@ public class PoeticJuggler extends Juggler {
 	public void perform(){
 		super.perform();
 		System.out.println("After juggling ..... ");
-		
+		System.out.println("Jump "+ this.jump+" tmes");
 		poem.recite();
+	}
+
+	public int getJump() {
+		return jump;
+	}
+
+	public void setJump(int jump) {
+		this.jump = jump;
 	}
 }

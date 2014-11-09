@@ -1,7 +1,8 @@
 package com.journaldev.spring.coommon;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("duke")
 public class Juggler implements Performer{
 	private int bags = 3;
 	
