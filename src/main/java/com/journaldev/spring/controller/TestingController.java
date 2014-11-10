@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.journaldev.spring.coommon.Performer;
 import com.journaldev.spring.dao.EmployeeDAO;
-import com.journaldev.spring.model.Employee;
+import com.journaldev.spring.model.User;
+import com.journaldev.spring.model.manager.UserManager;
 
 /**
  * Handles requests for the application home page.
@@ -26,6 +27,10 @@ public class TestingController {
 	@Qualifier("employeeJdbcTemplateDAO")
 	EmployeeDAO empolyeeJdbcDao;
 	
+	@Autowired
+	@Qualifier("userManagerImp")
+	UserManager userJpaManager;
+	
 	private static final Logger logger = LoggerFactory.getLogger(TestingController.class);
 	
 	/**
@@ -34,14 +39,15 @@ public class TestingController {
 	@RequestMapping(value = "/bean", method = RequestMethod.GET)
 	public String beanTest(Model model) {
 		logger.info("Start Bean Testing");
-		performer.perform();
+//		 performer.perform();
 		
-		Employee emp = empolyeeJdbcDao.getById(2);
-		System.out.println(emp.getId());
-		System.out.println(emp.getName());
-		System.out.println(emp.getRole());
+		User user = new User();
+		user.setUsername("stanley");
+		user.setName("stanley Hoo");
+		userJpaManager.insertUser(user);
+		System.out.println("User inserted!");
 		
 		return "home";
 	}
-
+	
 }

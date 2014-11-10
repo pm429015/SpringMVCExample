@@ -42,9 +42,9 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public String login(@Validated User user, Model model) {
-		model.addAttribute("userName", user.getUserName());
-		return "user";
-	}
+//	@RequestMapping(value = "/home", method = RequestMethod.POST)
+//	public String login(@Validated User user, Model model) {
+//		model.addAttribute("userName", user.getUserName());
+//		return "user";
+//	}
 }

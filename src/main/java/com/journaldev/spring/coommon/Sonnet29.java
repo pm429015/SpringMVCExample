@@ -1,5 +1,8 @@
 package com.journaldev.spring.coommon;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Sonnet29 implements Poem {
 	String content = "Stanley is so handsome~~!!!";
 			
