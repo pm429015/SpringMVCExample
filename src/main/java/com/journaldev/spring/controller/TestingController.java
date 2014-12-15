@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.journaldev.spring.coommon.Performer;
 import com.journaldev.spring.dao.EmployeeDAO;
@@ -50,4 +52,16 @@ public class TestingController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/allpayPost")
+	public String allPayResultBack_Sent(){
+		logger.info("Start Allpay post test");
+		return "allpay";
+	}
+	
+	@RequestMapping(value = "/allpayResultCheck", method = RequestMethod.POST)
+	public String allPayResultBack(AllPayReturnParams params){
+		logger.info(params.getMerchantID());
+		
+		return "1|OK";
+	}
 }
