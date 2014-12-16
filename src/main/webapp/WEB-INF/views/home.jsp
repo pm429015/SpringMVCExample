@@ -51,7 +51,7 @@
 						</h3>
 					</center>
 					<center>
-						<h4>2014-2015 NBA Season Prediction</h4>
+						<h4>2014-2015 NBA Game Winner Prediction</h4>
 					</center>
 				</div>
 			</div>
@@ -465,9 +465,9 @@
 							<div class="issue">2013-2014</div>
 							<div class="abstract">
 								<p>The authors present an authentication system that applies
-									machine learning techniques to observe a user’s cognitive
+									machine learning techniques to observe a user's cognitive
 									typing rhythm. Results from a large-scale experiment at Iowa
-									State University show the system’s effectiveness.</p>
+									State University show the system's effectiveness.</p>
 							</div>
 
 						</div>
@@ -504,6 +504,22 @@
 									problem. The challenge is to efficiently locate millions of 100
 									base pair short read sequences in a 3 million base pair
 									reference genome.</p>
+							</div>
+						</div>
+						
+						<div class="col-md-4">
+							<a href="http://pm429015.wordpress.com/2014/12/14/2014-2015-nba-season-prediction/">
+								<div class="title">
+									<h5>
+										<b>2014-2015 NBA Season Prediction</b>
+									</h5>
+								</div>
+							</a>
+							<div class="issue">2014</div>
+							<div class="abstract">
+								<p>I use a variety of statistical techniques to 
+								predict games, including SVM, Logistic Regression, LDA and PCA. With more than 3,000+ data points,
+								the prediction model achieves overall 70% accuracy.</p>
 							</div>
 						</div>
 					</div>
