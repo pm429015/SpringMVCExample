@@ -43,6 +43,117 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-xs-12">
+				<div class="box">
+					<center>
+						<h3>
+							<b>My Machine Learning Playground</b>
+						</h3>
+					</center>
+					<center>
+						<h4>2014-2015 NBA Season Prediction</h4>
+					</center>
+				</div>
+			</div>
+			<div id="nbaPredit">
+				<div class="col-xs-offset-3 col-xs-2" >
+					<center>
+						<h4>
+							<b> Visitor</b>
+						</h4>
+					</center>
+					<img
+						src="${pageContext.request.contextPath}/resources/img/Atlanta Hawks.gif"
+						id="visitorLogo"> <select class="form-control"
+						onChange="selectedVisitor(this);" id="visitor">
+						<option>Atlanta Hawks</option>
+						<option>Boston Celtics</option>
+						<option>Brooklyn Nets</option>
+						<option>Chicago Bulls</option>
+						<option>Charlotte Hornets</option>
+						<option>Cleveland Cavaliers</option>
+						<option>Dallas Mavericks</option>
+						<option>Denver Nuggets</option>
+						<option>Detroit Pistons</option>
+						<option>Golden State Warriors</option>
+						<option>Houston Rockets</option>
+						<option>Indiana Pacers</option>
+						<option>Los Angeles Clippers</option>
+						<option>Los Angeles Lakers</option>
+						<option>Memphis Grizzlies</option>
+						<option>Miami Heat</option>
+						<option>Milwaukee Bucks</option>
+						<option>Minnesota Timberwolves</option>
+						<option>New Orleans Pelicans</option>
+						<option>New York Knicks</option>
+						<option>Oklahoma City Thunder</option>
+						<option>Orlando Magic</option>
+						<option>Philadelphia 76ers</option>
+						<option>Phoenix Suns</option>
+						<option>Portland Trail Blazers</option>
+						<option>Sacramento Kings</option>
+						<option>San Antonio Spurs</option>
+						<option>Toronto Raptors</option>
+						<option>Utah Jazz</option>
+						<option>Washington Wizards</option>
+					</select>
+				</div>
+				<div class="col-xs-2">
+					<center>
+						<h3>
+							<b>VS</b>
+						</h3>
+					</center>
+				</div>
+
+				<div class="col-xs-2">
+					<center>
+						<h4>
+							<b> Home</b>
+						</h4>
+					</center>
+					<img
+						src="${pageContext.request.contextPath}/resources/img/Boston Celtics.gif"
+						id="HomeLogo"> <select class="form-control" id="home"
+						onChange="selectedHome(this);">
+						<option>Boston Celtics</option>
+						<option>Atlanta Hawks</option>
+						<option>Brooklyn Nets</option>
+						<option>Chicago Bulls</option>
+						<option>Charlotte Hornets</option>
+						<option>Cleveland Cavaliers</option>
+						<option>Dallas Mavericks</option>
+						<option>Denver Nuggets</option>
+						<option>Detroit Pistons</option>
+						<option>Golden State Warriors</option>
+						<option>Houston Rockets</option>
+						<option>Indiana Pacers</option>
+						<option>Los Angeles Clippers</option>
+						<option>Los Angeles Lakers</option>
+						<option>Memphis Grizzlies</option>
+						<option>Miami Heat</option>
+						<option>Milwaukee Bucks</option>
+						<option>Minnesota Timberwolves</option>
+						<option>New Orleans Pelicans</option>
+						<option>New York Knicks</option>
+						<option>Oklahoma City Thunder</option>
+						<option>Orlando Magic</option>
+						<option>Philadelphia 76ers</option>
+						<option>Phoenix Suns</option>
+						<option>Portland Trail Blazers</option>
+						<option>Sacramento Kings</option>
+						<option>San Antonio Spurs</option>
+						<option>Toronto Raptors</option>
+						<option>Utah Jazz</option>
+						<option>Washington Wizards</option>
+					</select>
+				</div>
+				<div class="col-xs-12 text-center">
+					<button type="button" class="btn btn-success btn-lg"
+						onclick='predit()'>Predict</button>
+				</div>
+
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-7">
@@ -351,23 +462,23 @@
 									</h5>
 								</div>
 							</a>
-								<div class="issue">2013-2014</div>
-								<div class="abstract">
-									<p>The authors present an authentication system that
-										applies machine learning techniques to observe a user’s
-										cognitive typing rhythm. Results from a large-scale experiment
-										at Iowa State University show the system’s effectiveness.</p>
-								</div>
-							
+							<div class="issue">2013-2014</div>
+							<div class="abstract">
+								<p>The authors present an authentication system that applies
+									machine learning techniques to observe a user’s cognitive
+									typing rhythm. Results from a large-scale experiment at Iowa
+									State University show the system’s effectiveness.</p>
+							</div>
+
 						</div>
 
 						<div class="col-md-4">
 							<a href="https://github.com/pm429015/SmartML">
-							<div class="title">
-								<h5>
-									<b>Python Machine Learning Toolbox</b>
-								</h5>
-							</div>
+								<div class="title">
+									<h5>
+										<b>Python Machine Learning Toolbox</b>
+									</h5>
+								</div>
 							</a>
 							<div class="issue">2013-2014</div>
 							<div class="abstract">
@@ -379,12 +490,12 @@
 
 						<div class="col-md-4">
 							<a href="http://memocode.irisa.fr/2012/2012-memocode-contest.pdf">
-							<div class="title">
-								<h5>
-									<b>MEMOCODE 2012 Hardware/Software Codesign Contest: DNA
-										Sequence Aligner</b>
-								</h5>
-							</div>
+								<div class="title">
+									<h5>
+										<b>MEMOCODE 2012 Hardware/Software Codesign Contest: DNA
+											Sequence Aligner</b>
+									</h5>
+								</div>
 							</a>
 							<div class="issue">2012</div>
 							<div class="abstract">
@@ -405,13 +516,15 @@
 	</div>
 </body>
 <!-- <script> -->
-//   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-//   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-//   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-//   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+Date();a=s.createElement(o), //
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-//   ga('create', 'UA-53951020-2', 'auto');
-//   ga('send', 'pageview');
+// ga('create', 'UA-53951020-2', 'auto'); // ga('send', 'pageview');
 
 <!-- </script> -->
 <script

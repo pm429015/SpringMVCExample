@@ -52,16 +52,5 @@ public class TestingController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/allpayPost")
-	public String allPayResultBack_Sent(){
-		logger.info("Start Allpay post test");
-		return "allpay";
-	}
-	
-	@RequestMapping(value = "/allpayResultCheck", method = RequestMethod.POST)
-	public String allPayResultBack(AllPayReturnParams params){
-		logger.info(params.getMerchantID());
-		
-		return "1|OK";
-	}
+
 }
