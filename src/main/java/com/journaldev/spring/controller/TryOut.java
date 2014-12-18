@@ -20,6 +20,7 @@ public class TryOut {
 	
 	public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<Integer> linkedNode = new LinkedList<Integer>();
         
         if(numRows <= 0){
             return result;
@@ -60,10 +61,7 @@ public class TryOut {
     }
 	
 	public static void main(String[] args) {
-		TryOut tryout = new TryOut();
-//		System.out.println(tryout.digit_at(11,2));startLevel
+		System.out.println('b'-'a');
 		
-		
-		System.out.println(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));
 	}
 }

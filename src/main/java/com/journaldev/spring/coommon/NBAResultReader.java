@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+
 import com.google.gson.Gson;
 
 public class NBAResultReader {
@@ -16,14 +18,13 @@ public class NBAResultReader {
 	}
 	private void fileToMap() {
 		
-		
 		BufferedReader br = null;
 		 
 		try {
  
 			String sCurrentLine;
  
-			br = new BufferedReader(new FileReader("./src/main/webapp/resources/db/prediction.csv"));
+			br = new BufferedReader(new FileReader("/home/stanley/bin/db/prediction.csv"));
  
 			while ((sCurrentLine = br.readLine()) != null) {
 				String[] line = sCurrentLine.split(";");

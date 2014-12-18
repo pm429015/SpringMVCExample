@@ -15,75 +15,7 @@
 
 	<context:component-scan base-package="com.journaldev.spring" />
 
-	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- <bean id="duke" class="com.journaldev.spring.coommon.Juggler"> -->
-	<!-- <constructor-arg value="100" /> -->
-	<!-- </bean> -->
 
-<!-- 	<bean id="sonnet29" class="com.journaldev.spring.coommon.Sonnet29"> -->
-<!-- 	</bean> -->
-
-	<bean id="poeticDuck" class="com.journaldev.spring.coommon.PoeticJuggler">
-		<property name="bags" value="3300" />
-		<property name="jump" value="4" />
-		<property name="poem" ref="sonnet29" />
-	</bean>
-
-	<bean id="poeticDuck2" class="com.journaldev.spring.coommon.PoeticJuggler">
-		<property name="bags" value="30" />
-		<property name="poem" ref="sonnet29" />
-	</bean>
-
-	<bean id="stage" class="com.journaldev.spring.coommon.Stage"
-		factory-method="instance">
-	</bean>
-
-	<aop:config>
-		<aop:aspect ref="audience">
-			<aop:pointcut id="performance"
-				expression="execution(* com.journaldev.spring.coommon.Performer.perform(..))" />
-			<aop:before pointcut-ref="performance" method="takeSeats" />
-			<aop:before pointcut-ref="performance" method="turnOffPhones" />
-			<aop:after pointcut-ref="performance" method="applaud" />
-			<aop:around method="watching" pointcut-ref="performance" />
-		</aop:aspect>
-
-	</aop:config>
-
-	<!-- dataSource -->
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/TestDB" />
-		<property name="username" value="root" />
-		<property name="password" value="833069237" />
-	</bean>
-
-	<!-- JDBC -->
-	<bean id="employeeJdbcDAO" class="com.journaldev.spring.dao.JdbcEmployeeDaoImp">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
-	<!-- Spring JDBC -->
-	<bean id="employeeJdbcTemplateDAO" class="com.journaldev.spring.dao.EmployeeJdbcTemplateDaoImp">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
-	<!-- JPA -->
-<!-- 	<bean id="userManager" class="com.journaldev.spring.model.manager.UserManagerImp"></bean> -->
-	
-	<!-- EntityManagerFactory -->
-	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="testPU" />
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
-	<!-- Transaction Manager -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
 
 	<!-- Enable @Transactional annotation -->
 	<tx:annotation-driven />
